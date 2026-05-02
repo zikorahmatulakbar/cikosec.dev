@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="description"
+        content="High-end personal portfolio website for an Informatics Engineering student and CTO. Modern, tech-forward, and elegant.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display (Serif) for headings, Inter (Sans-Serif) for body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"></div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Temuka...">
+                <button class="search-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#biodata">About Me</a></li>
+                <li><a href="#pendidikan">Education</a></li>
+                <li><a href="#pengalaman">Experience</a></li>
+                <li><a href="#keahlian">Skills</a></li>
+                <li><a href="#sertifikat">Certificates</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero fade-in">
+            <div class="hero-background"></div>
+            <div class="hero-container container">
+                <div class="hero-content" style="max-width: 600px;">
+                    <h1 class="hero-name" style="font-family: var(--font-body); font-weight: 700; font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 0.5rem; text-transform: uppercase;">I am<br>ZIKO RAHMATUL AKBAR</h1>
+                    <h3 class="hero-role" style="font-family: var(--font-body); font-weight: 600; text-transform: none;">S1 Teknik Informatika</h3>
+                    <!-- <p class="hero-desc">...</p> -->
+                    
+                    <div class="hero-actions">
+                        <!-- Masukkan nomor WA kamu di href ini, ganti 6281234567890 dengan nomor kamu -->
+                        <a href="https://wa.me/6283861938242" target="_blank" class="cta-button outline neon-button">Hubungi Saya</a>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/zicho.ak?igsh=Yng2MzUzdnMzaDVs" class="icon-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ziko-rahmatul-akbar-0646b938b/" class="icon-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/zikorahmatulakbar" class="icon-link"><i class="fab fa-github"></i></a>
+                        <!-- Email Icon: Jika diklik akan membuka aplikasi email. Kamu bisa isi href dengan mailto:emailkamu@gmail.com -->
+                        <a href="mailto:zikorahmatulakbar@gmail.com" class="icon-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper fade-in-up" style="transition-delay: 0.2s;">
+                    <!-- Hexagon Photo Layout with Click Animation -->
+                    <div class="hexagon-bg" id="profile-photo">
+                        <!-- Kamu bisa ganti src ini dengan foto aslimu -->
+                        <img src="4.jpeg" alt="Novi Wahyuni" class="hero-img">
+                        <div class="decor-cross cross-1"></div>
+                        <div class="decor-cross cross-2"></div>
+                        <div class="decor-dot dot-1"></div>
+                        <div class="decor-dot dot-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biodata Section -->
+        <section id="biodata" class="about">
+            <div class="container about-layout">
+                <div class="about-image-wrapper fade-in-up">
+                    <div class="hexagon-bg bento-hover" style="margin: 0 auto;">
+                        <img src="1.jpeg" alt="About Image" class="hero-img">
+                        <div class="decor-cross cross-1"></div>
+                        <div class="decor-cross cross-2"></div>
+                        <div class="decor-dot dot-1"></div>
+                        <div class="decor-dot dot-2"></div>
+                    </div>
+                </div>
+
+                <div class="about-text fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="section-title">01. About Me</h2>
+                    <p class="body-text" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-primary);">
+                        Informatics Engineering student with a strong passion for cybersecurity and penetration testing. Actively expanding my expertise through TryHackMe and building dynamic web applications using Laravel and Python.
+                    </p>
+                    <ul class="body-text" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><strong style="width:120px; color:var(--neon-color);">Name</strong> <span style="color:var(--text-primary);">: Ziko Rahmatul Akbar</span></li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><strong style="width:120px; color:var(--neon-color);">Location</strong> <span style="color:var(--text-primary);">: Pekanbaru, Riau, Indonesia</span></li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><strong style="width:120px; color:var(--neon-color);">University</strong> <span style="color:var(--text-primary);">: Universitas Muhammadiyah Riau</span></li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><strong style="width:120px; color:var(--neon-color);">Address</strong> <span style="color:var(--text-primary);">: Jl Seokarno Hatta</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pendidikan Section -->
+        <section id="pendidikan" class="skills fade-in">
+            <div class="container">
+                <h2 class="section-title text-center">02. Education</h2>
+                <div class="skills-grid">
+                    <div class="skill-card neon-card bento-hover">
+                        <h3 style="margin-bottom: 5px; color: var(--neon-color);">Elementary School</h3>
+                        <p style="color: var(--text-secondary);">SD 15 Negeri Kandis</p>
+                    </div>
+                    <div class="skill-card neon-card bento-hover">
+                        <h3 style="margin-bottom: 5px; color: var(--neon-color);">Middle School</h3>
+                        <p style="color: var(--text-secondary);">SMP Negeri 05 Pangkalan Koto Baru</p>
+                    </div>
+                    <div class="skill-card neon-card bento-hover">
+                        <h3 style="margin-bottom: 5px; color: var(--neon-color);">High School</h3>
+                        <p style="color: var(--text-secondary);">SMA Negeri 1 Pangkalan Koto Baru</p>
+                    </div>
+                    <div class="skill-card neon-card bento-hover">
+                        <h3 style="margin-bottom: 5px; color: var(--neon-color);">University</h3>
+                        <p style="color: var(--text-secondary);">S1 Teknik Informatika</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pengalaman & Organisasi Section -->
+        <section id="pengalaman" class="skills fade-in">
+            <div class="container">
+                <h2 class="section-title text-center">03. Experience &amp; Activities</h2>
+                <div class="experience-grid">
+
+                    <!-- GOLD — Juara 5 Mata Hacker -->
+                    <div class="exp-card exp-card--gold bento-hover fade-in-up">
+                        <div class="exp-card__icon"><i class="fas fa-trophy"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge badge--gold">🏆 5th Place</span>
+                            <h3 class="exp-card__title">Mata Hacker Competition</h3>
+                            <p class="exp-card__desc">Cybersecurity &amp; Ethical Hacking national competition</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-card bento-hover fade-in-up" style="transition-delay:.1s">
+                        <div class="exp-card__icon"><i class="fas fa-cloud"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge">Workshop</span>
+                            <h3 class="exp-card__title">Cloud Camp Pekanbaru</h3>
+                            <p class="exp-card__desc">Cloud Computing fundamentals &amp; hands-on cloud workshop</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-card bento-hover fade-in-up" style="transition-delay:.2s">
+                        <div class="exp-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge">Self-Learning</span>
+                            <h3 class="exp-card__title">TryHackMe</h3>
+                            <p class="exp-card__desc">Cybersecurity self-learning — penetration testing &amp; CTF challenges</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-card bento-hover fade-in-up" style="transition-delay:.3s">
+                        <div class="exp-card__icon"><i class="fas fa-robot"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge">Certification</span>
+                            <h3 class="exp-card__title">IBM SkillsBuild</h3>
+                            <p class="exp-card__desc">Completed 3 concurrent IBM courses — AI, Design Thinking &amp; Code Generation</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-card bento-hover fade-in-up" style="transition-delay:.4s">
+                        <div class="exp-card__icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge">Certification</span>
+                            <h3 class="exp-card__title">Dicoding AI</h3>
+                            <p class="exp-card__desc">Artificial Intelligence learning path on Dicoding platform</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-card bento-hover fade-in-up" style="transition-delay:.5s">
+                        <div class="exp-card__icon"><i class="fas fa-rocket"></i></div>
+                        <div class="exp-card__body">
+                            <span class="exp-card__badge">Program</span>
+                            <h3 class="exp-card__title">P2MV Wirausaha</h3>
+                            <p class="exp-card__desc">Student entrepreneurship development &amp; innovation program</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills / Technical Arsenal Section -->
+        <section id="keahlian" class="skills fade-in" style="padding-top: 2rem;">
+            <div class="container">
+                <p class="arsenal-label">// SKILLS</p>
+                <h2 class="arsenal-title">Technical Arsenal</h2>
+                <div class="arsenal-grid">
+
+                    <!-- Cybersecurity -->
+                    <div class="arsenal-card neon-card bento-hover fade-in-up">
+                        <div class="arsenal-category">[ CYBERSECURITY ]</div>
+                        <div class="skill-bar-item"><span>Nmap</span><div class="bar-track"><div class="bar-fill" data-width="75"></div></div><span class="pct">75%</span></div>
+                        <div class="skill-bar-item"><span>Metasploit</span><div class="bar-track"><div class="bar-fill" data-width="60"></div></div><span class="pct">60%</span></div>
+                        <div class="skill-bar-item"><span>Hydra</span><div class="bar-track"><div class="bar-fill" data-width="55"></div></div><span class="pct">55%</span></div>
+                        <div class="skill-bar-item"><span>OSINT</span><div class="bar-track"><div class="bar-fill" data-width="65"></div></div><span class="pct">65%</span></div>
+                        <div class="skill-bar-item"><span>Linux</span><div class="bar-track"><div class="bar-fill" data-width="70"></div></div><span class="pct">70%</span></div>
+                        <div class="skill-bar-item"><span>SQL Injection</span><div class="bar-track"><div class="bar-fill" data-width="65"></div></div><span class="pct">65%</span></div>
+                        <div class="skill-bar-item"><span>Brute Force</span><div class="bar-track"><div class="bar-fill" data-width="60"></div></div><span class="pct">60%</span></div>
+                        <div class="skill-bar-item"><span>DDoS (Theory)</span><div class="bar-track"><div class="bar-fill" data-width="50"></div></div><span class="pct">50%</span></div>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="arsenal-card neon-card bento-hover fade-in-up" style="transition-delay:.15s">
+                        <div class="arsenal-category">[ WEB DEVELOPMENT ]</div>
+                        <div class="skill-bar-item"><span>HTML / CSS</span><div class="bar-track"><div class="bar-fill" data-width="85"></div></div><span class="pct">85%</span></div>
+                        <div class="skill-bar-item"><span>Tailwind CSS</span><div class="bar-track"><div class="bar-fill" data-width="80"></div></div><span class="pct">80%</span></div>
+                        <div class="skill-bar-item"><span>JavaScript</span><div class="bar-track"><div class="bar-fill" data-width="70"></div></div><span class="pct">70%</span></div>
+                        <div class="skill-bar-item"><span>PHP</span><div class="bar-track"><div class="bar-fill" data-width="65"></div></div><span class="pct">65%</span></div>
+                        <div class="skill-bar-item"><span>Laravel</span><div class="bar-track"><div class="bar-fill" data-width="60"></div></div><span class="pct">60%</span></div>
+                        <div class="skill-bar-item"><span>SQL / Database</span><div class="bar-track"><div class="bar-fill" data-width="68"></div></div><span class="pct">68%</span></div>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="arsenal-card neon-card bento-hover fade-in-up" style="transition-delay:.3s">
+                        <div class="arsenal-category">[ PROGRAMMING ]</div>
+                        <div class="skill-bar-item"><span>Python</span><div class="bar-track"><div class="bar-fill" data-width="65"></div></div><span class="pct">65%</span></div>
+                        <div class="skill-bar-item"><span>Bash / Shell</span><div class="bar-track"><div class="bar-fill" data-width="55"></div></div><span class="pct">55%</span></div>
+                        <div class="skill-bar-item"><span>Git</span><div class="bar-track"><div class="bar-fill" data-width="60"></div></div><span class="pct">60%</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="sertifikat" class="skills fade-in">
+            <div class="container">
+                <h2 class="section-title text-center">06. Certificates</h2>
+                <div class="cert-grid">
+
+                    <div class="cert-card neon-card bento-hover fade-in-up">
+                        <div class="cert-icon" style="background: rgba(0,200,100,0.12); color:#00cc66;"><i class="fas fa-search"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">OSINT Exposed — Cybersecurity &amp; OSINT Webinar</h3>
+                            <p class="cert-issuer">MATA HACKER × MATA SIBER</p>
+                            <p class="cert-date">Februari 2026 · ID: 093/MH-MS/OSINT/II/2026</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">OSINT</span>
+                                <span class="cert-tag">Cybersecurity Awareness</span>
+                                <span class="cert-tag">Digital Investigation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card neon-card bento-hover fade-in-up" style="transition-delay:.1s">
+                        <div class="cert-icon" style="background: rgba(0,180,255,0.12); color:#00b4ff;"><i class="fas fa-cloud"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Cloud Camp Pekanbaru</h3>
+                            <p class="cert-issuer">CLOUD CAMP · PEKANBARU</p>
+                            <p class="cert-date">Maret 2026</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Cloud Computing</span>
+                                <span class="cert-tag">Cloud Fundamentals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card neon-card bento-hover fade-in-up" style="transition-delay:.2s">
+                        <div class="cert-icon" style="background: rgba(30,90,200,0.15); color:#4f8ef7;"><i class="fas fa-robot"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Code Generation and Optimization Using IBM Granite</h3>
+                            <p class="cert-issuer">IBM SKILLSBUILD</p>
+                            <p class="cert-date">Oktober 2025 · Verified on Credly</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">AI for Dev</span>
+                                <span class="cert-tag">Code Generation</span>
+                                <span class="cert-tag">Generative AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card neon-card bento-hover fade-in-up" style="transition-delay:.3s">
+                        <div class="cert-icon" style="background: rgba(255,200,0,0.12); color:#ffcc00;"><i class="fas fa-lightbulb"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Use Generative AI for Software Development</h3>
+                            <p class="cert-issuer">IBM SKILLSBUILD</p>
+                            <p class="cert-date">2025</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Generative AI</span>
+                                <span class="cert-tag">Software Development</span>
+                                <span class="cert-tag">AI Integration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card neon-card bento-hover fade-in-up" style="transition-delay:.4s">
+                        <div class="cert-icon" style="background: rgba(200,100,255,0.12); color:#c864ff;"><i class="fas fa-brain"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">IBM Design Thinking Practitioner</h3>
+                            <p class="cert-issuer">IBM SKILLSBUILD</p>
+                            <p class="cert-date">November 2025</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Design Thinking</span>
+                                <span class="cert-tag">UX Methodology</span>
+                                <span class="cert-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card neon-card bento-hover fade-in-up" style="transition-delay:.5s">
+                        <div class="cert-icon" style="background: rgba(0,200,100,0.12); color:#00cc66;"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Belajar Dasar AI — Dicoding</h3>
+                            <p class="cert-issuer">DICODING INDONESIA</p>
+                            <p class="cert-date">2025</p>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Artificial Intelligence</span>
+                                <span class="cert-tag">Machine Learning</span>
+                                <span class="cert-tag">Dicoding</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="skills fade-in">
+            <div class="container">
+                <p class="arsenal-label">// SELECTED WORKS</p>
+                <h2 class="arsenal-title">My Projects</h2>
+                <div class="projects-grid">
+
+                    <!-- Project 1: Ground To Sky -->
+                    <div class="project-card neon-card bento-hover fade-in-up">
+                        <div class="project-img-wrap">
+                            <img src="ground-to-sky.png" alt="Ground To Sky Project" class="project-img">
+                            <div class="project-overlay">
+                                <!-- Masukkan link GITHUB Ground To Sky di bawah ini -->
+                                <a href="https://zikorahmatulakbar.github.io/" target="_blank" class="project-link-btn"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: SOKUL -->
+                    <div class="project-card neon-card bento-hover fade-in-up" style="transition-delay:.15s">
+                        <div class="project-img-wrap">
+                            <img src="sokul.png" alt="SOKUL Project" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://zikorahmatulakbar.github.io/SOKULDo.id/" target="_blank" class="project-link-btn"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer fade-in">
+        <div class="container text-center">
+            <div class="social-icons" style="justify-content: center; margin-bottom: 1.5rem;">
+                <a href="#" class="icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright" style="margin-top: 2rem; text-transform: uppercase;">COPYRIGHT ALL RESERVED BY @ZIKO-RAHMATUL-AKBAR</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
