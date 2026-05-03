@@ -42,13 +42,20 @@ html {
 }
 
 body {
-    background: radial-gradient(circle at top, #0a1f24 0%, var(--bg-color) 60%);
+    background-color: var(--bg-color);
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.95)), url('bg.png');
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     color: var(--text-primary);
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+    background-image: linear-gradient(to bottom, rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.95)), url('bg.png');
 }
 
 .container {
@@ -65,6 +72,33 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 400;
+}
+/* Starry Background */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 0.9; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.8); }
 }
 
 .section-title {
@@ -231,10 +265,8 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('file:///C:/Users/ACER/.gemini/antigravity/brain/8ef200c8-cfe0-4e60-b385-6f8c44c57007/hero_background_1777287606059.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
+    /* Background is now on the body, removing hero-specific background */
+    opacity: 0;
     z-index: -1;
 }
 
@@ -285,7 +317,7 @@ h1, h2, h3, h4 {
     margin-bottom: 2.5rem;
 }
 
-/* Neon Button */
+
 .cta-button {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -311,7 +343,7 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* Social Icons */
+
 .social-icons {
     display: flex;
     gap: 1.2rem;
@@ -339,7 +371,7 @@ h1, h2, h3, h4 {
     transform: translateY(-3px);
 }
 
-/* Hexagon Image Layout */
+
 .hero-image-wrapper {
     flex: 1;
     display: flex;
@@ -397,7 +429,7 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
-/* Decorative elements */
+
 .decor-cross {
     position: absolute;
     width: 15px;
@@ -428,7 +460,6 @@ h1, h2, h3, h4 {
 .dot-1 { top: 20%; left: 0%; }
 .dot-2 { bottom: 5%; right: 10%; }
 
-/* About Section */
 .about {
     padding: 6rem 0;
 }
@@ -454,7 +485,6 @@ h1, h2, h3, h4 {
     transition: filter 0.5s ease;
 }
 
-/* Skills Section */
 .skills {
     padding: 6rem 0;
 }
@@ -622,7 +652,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Bento Skills Grid */
 .bento-skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -731,7 +760,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* ===== TECHNICAL ARSENAL ===== */
 .arsenal-label {
     font-family: var(--font-body);
     font-size: 0.8rem;
@@ -779,11 +807,22 @@ h1, h2, h3, h4 {
     margin-bottom: 0.9rem;
 }
 
-.skill-bar-item > span:first-child {
+.skill-bar-item > .skill-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.85rem;
     color: var(--text-secondary);
-    min-width: 110px;
+    flex: 0 0 130px; /* Fixed width for perfect alignment */
     font-family: var(--font-body);
+}
+
+.skill-bar-item > .skill-name i {
+    color: var(--neon-color);
+    font-size: 0.95rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .bar-track {
@@ -807,7 +846,7 @@ h1, h2, h3, h4 {
     font-size: 0.75rem;
     color: var(--neon-color);
     font-weight: 600;
-    min-width: 32px;
+    flex: 0 0 35px; /* Fixed width to align percentages perfectly */
     text-align: right;
     font-family: var(--font-body);
 }
@@ -816,7 +855,6 @@ h1, h2, h3, h4 {
     .arsenal-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== EXPERIENCE GRID ===== */
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -914,7 +952,6 @@ h1, h2, h3, h4 {
     line-height: 1.5;
 }
 
-/* ===== CERTIFICATES GRID ===== */
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1000,7 +1037,6 @@ h1, h2, h3, h4 {
     .arsenal-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== PROJECTS SECTION ===== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

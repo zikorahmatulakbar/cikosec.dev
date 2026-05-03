@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Intersection Observer for fade-in animations
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
     animatedElements.forEach(el => observer.observe(el));
 
-    // Animate skill progress bars when arsenal section is visible
     const barObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -36,27 +35,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (arsenalSection) barObserver.observe(arsenalSection);
 
 
-    // Parallax effect for images
+   
+    const parallaxElements = document.querySelectorAll('.parallax');
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const parallaxElements = document.querySelectorAll('.parallax');
-        
-        parallaxElements.forEach(el => {
-            const speed = 0.1;
-            el.style.transform = `translateY(${scrolled * speed}px)`;
-        });
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                parallaxElements.forEach(el => {
+                    const speed = 0.1;
+                    el.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
-    // Theme toggle functionality
+    
     const themeToggle = document.getElementById('theme-toggle');
     const moonIcon = document.querySelector('.moon-icon');
     const sunIcon = document.querySelector('.sun-icon');
     
-    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     
-    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+    if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
         moonIcon.style.display = 'none';
         sunIcon.style.display = 'block';
@@ -76,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Profile photo 3D hover animation
     const hexagonPhotos = document.querySelectorAll('.hexagon-bg');
     hexagonPhotos.forEach(photo => {
         photo.addEventListener('mousemove', (e) => {
@@ -100,19 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Interactive cards click & hover functionality
+    
     const interactiveCards = document.querySelectorAll('.bento-hover');
     interactiveCards.forEach(card => {
         card.addEventListener('click', () => {
-            // Remove active class from all other cards
+            
             interactiveCards.forEach(c => {
                 if (c !== card) c.classList.remove('active-skill-card');
             });
-            // Toggle active class on clicked card
+            
             card.classList.toggle('active-skill-card');
         });
 
-        // 3D Tilt interaction for interactive Cards
+        
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -121,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Adjust tilt intensity
+           
             const rotateX = ((y - centerY) / centerY) * -10;
             const rotateY = ((x - centerX) / centerX) * 10;
             
@@ -134,4 +137,30 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         });
     });
+
+    // Generate Optimized Starry Background
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars-container';
+    document.body.prepend(starsContainer);
+
+    for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random size between 1px and 3px
+        const size = Math.random() * 2 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        
+        // Random position
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = Math.random() * 100 + 'vh';
+        
+        // Random animation duration and delay
+        star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        star.style.animationDelay = (Math.random() * 5) + 's';
+        
+        starsContainer.appendChild(star);
+    }
+
 });
